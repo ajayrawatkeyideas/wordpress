@@ -85,8 +85,6 @@ INNER JOIN wp_coordinator ON wp_course.coordinator_id=wp_coordinator.id");
 get_footer();
 ?>
 
-<?php
-//AJAX
 
 
 
