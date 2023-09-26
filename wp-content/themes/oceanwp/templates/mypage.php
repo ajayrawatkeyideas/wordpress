@@ -47,7 +47,8 @@ INNER JOIN wp_coordinator ON wp_course.coordinator_id=wp_coordinator.id");
   <tbody>
 
     <?php
-
+    $index=1;
+    $size = sizeof($result);
 
     if ($result) {
       foreach ($result as $row) { ?>
@@ -62,9 +63,9 @@ INNER JOIN wp_coordinator ON wp_course.coordinator_id=wp_coordinator.id");
               <a href="http://localhost/wordpress/wordpress/update-student?id=<?php echo $row->sid ?>& course_id=<?php echo $row->cid ?>" class='button'>Update</a>
               <a href="http://localhost/wordpress/wordpress/add-marks?id=<?php echo $row->sid ?>& course_id=<?php echo $row->cid ?>" class='button'>Add Marks</a>
               <a href="http://localhost/wordpress/wordpress/show-marks?id=<?php echo $row->sid ?>" class='button'>Shows Marks</a>
-              <a class="ajax-button button" value="<?php echo $row->sid ?>" >Click Me</a>
+              <a size="<?php echo $size ?>" value="<?php echo $row->sid ?>" id="ajax-button<?php echo $index ?>" class="ajax-button button">Shows Marks with AJAX</a>
             </form>
-
+            <?php ++$index ?>
           </td>
         </tr>
       <?php
